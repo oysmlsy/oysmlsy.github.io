@@ -7,3 +7,4 @@ author: oysmlsy
 baseurl: ""
 url: "oysmlsy.github.io"
 permalink: /:categories/:title
+excerpt_separator: '<!-- more -->'
