@@ -1,0 +1,9 @@
+title: oysmlsy 的个人博客
+email: oysmlsy@gmail.com
+description: >
+ some description
+ by oysmlsy
+author: oysmlsy
+baseurl: ""
+url: "oysmlsy.github.io"
+permalink: /:categories/:title
