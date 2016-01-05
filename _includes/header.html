@@ -1,9 +1,10 @@
-<div>
-    <a href="{{ site.baseurl }}/">{{ site.title }}</a>
-</div>
-<ul>
-    {% for page in site.pages %} {% if page.title %}
-    <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-    {% endif %} {% endfor %}
-</ul>
-<hr>
+<header id="header">
+    <h1><strong><a href="{{ site.baseurl }}/">{{ site.title }}</a></strong></h1>
+    <nav id="nav">
+        <ul>
+            {% for page in site.pages %} {% if page.title %}
+            <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+            {% endif %} {% endfor %}
+        </ul>
+    </nav>
+</header>

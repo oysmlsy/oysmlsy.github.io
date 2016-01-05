@@ -10,7 +10,7 @@ permalink: /technology/
         <h2>
           <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
-        <p>{{ post.excerpt | strip_html }} ......</p>
+        <p>{{ post.excerpt | strip_html | strip_newlines | truncate: 160 }}</p>
     </li>
     {% endif %} {% endfor %}
 </ul>

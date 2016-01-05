@@ -1,10 +1,15 @@
-<hr>
-<div>
-    <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-</div>
-<div>
-    <p>subscribe <a href="{{ " /feed.xml " | prepend: site.baseurl }}">via RSS</a></p>
-</div>
-<div>
-    {{ site.description }}
-</div>
+<footer id="footer">
+    <div class="container">
+        <ul class="icons">
+            <li>
+                <a href="mailto:{{ site.email }}" class="icon fa-envelope"></a>
+            </li>
+            <li>
+                <a href="{{ " /feed.xml " | prepend: site.baseurl }}" class="icon fa-rss"></a>
+            </li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; oysmlsy</li>
+        </ul>
+    </div>
+</footer>

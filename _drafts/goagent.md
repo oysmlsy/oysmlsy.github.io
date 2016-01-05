@@ -19,8 +19,6 @@ Google App Engine，简称 GAE，地址是 https://appengine.google.com。
 
 如此反复多建立几个工程。
 
-<!-- more -->
-
 ## 下载 GoAgent
 
 GoAgent 托管在 GitHub 上，地址是 https://github.com/goagent/goagent，本文写作时的版本是 3.2.3。
@@ -114,10 +112,10 @@ Firefox 和 Opera 需要导入证书。
 
 对于 CentOS 6.x：
 
-    # yum install centos-release-SCL
-    # yum install python27
+    $ yum install centos-release-SCL
+    $ yum install python27
 
 在 /etc/ld.so.conf.d/ 文件夹中建立文件 python27.conf，内容为 /opt/rh/python27/root/usr/lib64。
 
-    # ldconfig // 加载配置
+    $ ldconfig // 加载配置
     $ /opt/rh/python27/root/usr/bin/python proxy.py
