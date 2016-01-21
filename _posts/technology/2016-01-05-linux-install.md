@@ -121,15 +121,18 @@ VirtualBox 需要编译操作系统内核，所以安装它之前需要先安装
 
 ## 安装 Tomcat
 
-官网下载压缩包，解压。
+官网下载压缩包，解压，或
 
-## 安装 Gradle
+    $ yum install tomcat
+    安装在 /usr/share/tomcat/
+
+## 安装 Gradle 和 Maven
 
 官网下载压缩包，解压。
 
     $ vi ~/.bash_profile
 
-将 Gradle 的 bin 目录加入到 $PATH 环境变量。
+将 Gradle 和 Maven 的 bin 目录加入到 $PATH 环境变量。
 
 ## 安装 Eclipse
 
