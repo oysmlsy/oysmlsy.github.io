@@ -83,6 +83,10 @@ VirtualBox 需要编译操作系统内核，所以安装它之前需要先安装
 
     $ yum install kernel-devel
 
+编译内核需要编译器，要保证 gcc 已经安装：
+
+    $ yum install gcc-c++
+
 官网下载 .rpm 文件，双击安装或 `$ yum localinstall *.rpm`。
 
 对于 VirtualBox 只能装32位系统的情况，涉及到 Host 的 CPU 是否支持虚拟化以及是否开启了虚拟化，如果没有开启，在 BIOS 里面设置，一般在 CPU 的子设置里面，且含有 “Virtualization” 或 “Virtual” 字样，将它设为 Enable 。
