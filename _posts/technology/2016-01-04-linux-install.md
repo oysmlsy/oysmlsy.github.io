@@ -14,6 +14,18 @@ categories: technology
 
 (hd0,1)代表第一个分区。
 
+## 没有 ifconfig 命令的解决办法
+
+CentOS 7.x Minimal 版本在没有安装桌面环境之前是没有 ifconfig 命令的，看一看哪个包提供了 ifconfig 命令：
+
+    $ yum provides ifconfig
+    or
+    $ yum whatprovides ifconfig
+
+输出中可以看到 net-tools 包提供 ifconfig 命令，那么安装它吧：
+
+    # yum install net-tools
+
 ## 安装 GNOME
 
     // 查看一下 YUM 仓库提供了哪些 groups
@@ -31,23 +43,116 @@ CentOS 6.x 与 CentOS 7.x 的 group 是不一样的（CentOS 7.x 的不同子版
 
 ## 安装第三方源 EPEL 与 RPMForge
 
-CentOS 的官方文档声称严重推荐 EPEL，不推荐 RPMForge（现在叫RepoForge），因为 RPMForge 已经不再被维护了，虽然曾经被 CentOS 推荐。可以将这两个都安装，但都要 disable 掉，需要的时候再加上 --enablerepo=epel 或 --enablerepo=rpmforge。
+CentOS 的官方文档声称严重推荐 EPEL，不推荐 RPMForge（现在叫RepoForge），因为 RPMForge 已经不再被维护了，虽然曾经被 CentOS 推荐。可以将这两个都安装，然后 disable 掉，需要的时候再加上 --enablerepo=epel 或 --enablerepo=rpmforge。
 
-去 EPEL 和 RPMForge 官网各自下载 .rpm 文件，双击安装或 `$ rpm -ivh *.rpm`，EPEL 或 RPMForge 的 repo 文件就已经在目录 /etc/yum.repos.d/ 下了。
+EPEL 官网说的很清楚，直接：
+
+    $ yum install epel-release
+
+RPMForge 则去官网下载 .rpm 文件：
+
+    $ rpm -ivh *.rpm
+
+EPEL 或 RPMForge 的 repo 文件就已经在目录 /etc/yum.repos.d/ 下了。
 
 ## 支持挂载 NTFS 文件系统
 
 CentOS 的官方 YUM 仓库没有支持 NTFS 的包，需要从 EPEL 或 RPMForge 里安装。
 
     $ yum install ntfs-3g --enablerepo=epel
-
-或
-
+    or
     $ yum install fuse-ntfs-3g --enablerepo=rpmforge
+
+## 安装常用压缩打包工具
+
+    $ yum install zip unzip
+    $ zip *.zip file1 file2
+    $ unzip *.zip
+
+    $ yum install rar --enablerepo=rpmforge
+    $ rar a *.rar file1 file2
+    $ rar x *.rar
+
+    $ yum install p7zip --enablerepo=epel
+    $ 7za a *.7z file1 file2
+    $ 7za x *.7z
+
+    $ tar xzvf *.tar.gz
+    $ tar czvf *.tar.gz file1 file2
+    $ tar xjvf *.tar.bz2
+    $ tar cjvf *.tar.bz2 file1 file2
+    $ tar xJvf *.tar.xz
+    $ tar cJvf *.tar.xz file1 file2
 
 ## 安装 C++ 编译器
 
     $ yum install gcc-c++
+
+## 安装 Apache HTTP Server
+
+    $ yum install httpd
+
+## 安装 MariaDB
+
+    $ yum install mariadb-server
+
+    // 然后进行初始化配置
+    $ mysql_secure_installation
+
+## 安装 PHP
+
+    $ yum install php
+
+    // 然后安装一些常用模块
+    $ yum install php-mysql php-gd php-xml php-mbstring
+
+    // PHP 的配置文件：/etc/php.int
+    // 通常修改一下这个配置项：upload_max_filesize = 2M
+
+## 安装 Tomcat
+
+    $ yum install tomcat
+    // 默认安装在 /usr/share/tomcat/
+
+## 安装 Qt Creator
+
+    $ yum install qt-creator qt-creator-doc qt-creator-data qt-creator-translations --enablerepo=epel
+
+## 安装 Node.js
+
+官网下载 Source Code
+
+    $ ./configure
+    $ make
+    $ sudo make install
+    $ node -v
+    $ npm -v
+
+## 安装 Java OpenJDK 开发包
+
+查看一下当前 Java 版本：
+
+    $ java -version
+    openjdk version "1.8.0_91"
+    OpenJDK Runtime Environment (build 1.8.0_91-b14)
+    OpenJDK 64-Bit Server VM (build 25.91-b14, mixed mode)
+
+1.8.0 版本，那么 search 一下就安装吧：
+
+    $ yum search java-1.8.0
+    $ yum install java-1.8.0-openjdk-devel
+
+## 安装 Gradle 和 Maven
+
+官网下载压缩包，解压。
+
+    $ vi ~/.bash_profile
+
+将 Gradle 和 Maven 的 bin 目录加入到 $PATH 环境变量。
+
+
+
+
 
 ## 安装 Git
 
@@ -153,27 +258,6 @@ git config 命令有3个选项，对应修改不同的配置文件。
     [abc] 匹配任何一个列在方括号中的字符（这个例子要么匹配一个 a，要么匹配一个 b，要么匹配一个 c）
     问号?只匹配一个任意字符
     如果在方括号中使用短划线分隔两个字符，表示所有在这两个字符范围内的都可以匹配，比如 [0-9] 表示匹配所有 0 到 9 的数字
-
-## 安装常用压缩打包命令
-
-    $ yum install zip unzip
-    $ zip *.zip file1 file2
-    $ unzip *.zip
-
-    $ yum install rar --enablerepo=rpmforge
-    $ rar a *.rar file1 file2
-    $ rar x *.rar
-
-    $ yum install p7zip --enablerepo=rpmforge
-    $ 7za a *.7z file1 file2
-    $ 7za x *.7z
-
-    $ tar xzvf *.tar.gz
-    $ tar czvf *.tar.gz file1 file2
-    $ tar xjvf *.tar.bz2
-    $ tar cjvf *.tar.bz2 file1 file2
-    $ tar xJvf *.tar.xz
-    $ tar cJvf *.tar.xz file1 file2
 
 ## 安装 Markdown 解析器 python-markdown
 
@@ -282,59 +366,7 @@ VirtualBox 需要编译操作系统内核，所以安装它之前需要先安装
     $ wkhtmltopdf http://google.com google.pdf
     $ wkhtmltoimage http://google.com google.jpg
 
-## 安装 Apache HTTP Server
-
-    $ yum install httpd
-
-## 安装 MariaDB
-
-    $ yum install mariadb-server
-    $ mysql_secure_installation
-
-## 安装 PHP
-
-    $ yum install php php-mysql php-gd php-xml php-mbstring
-
-通常需要修改 PHP 的配置文件：/etc/php.int。
-
-    upload_max_filesize = 2M
-
-## 安装 Tomcat
-
-    // 默认安装在 /usr/share/tomcat/
-    $ yum install tomcat
-
-## 安装 Gradle 和 Maven
-
-官网下载压缩包，解压。
-
-    $ vi ~/.bash_profile
-
-将 Gradle 和 Maven 的 bin 目录加入到 $PATH 环境变量。
-
-## 安装 Node.js
-
-官网下载源码压缩包，解压。
-
-    $ ./configure
-    $ make
-    $ sudo make install
-    $ node -v
-    $ npm -v
-
-## 安装 Qt Creator
-
-    $ yum install qt-creator qt-creator-doc qt-creator-data qt-creator-translations --enablerepo=epel
 
 
-## 没有 ifconfig 命令的解决办法
-
-CentOS 7.x Minimal 版本在没有安装桌面环境之前是没有 ifconfig 命令的，看一看哪个包提供了 ifconfig 命令：
-
-    $ yum provides ifconfig 或 $ yum whatprovides ifconfig
-
-输出中可以看到 net-tools 包提供 ifconfig 命令，那么安装它吧：
-
-    # yum install net-tools
 
 
