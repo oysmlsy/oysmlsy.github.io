@@ -1,11 +1,9 @@
 ---
 layout: right-sidebar
-title:  "Linux 下折腾 swap"
+title:  '如何为 Linux 增加虚拟内存 swap'
 ---
 
-# Linux 下折腾 swap
-
-最近部署在阿里云 ECS 云服务器上的 Wordpress 网站经常挂掉，查了查，原因是 MySQL 不停的吃内存以至于最后被 kill 了。进而有了为 Linux 增加 swap 的想法。
+最近公司一台阿里云乞丐版云服务器上的 Wordpress 网站经常挂掉，翻看日志查明原因：内存小，MySQL 不停的消耗内存，最后被操作系统 kill 了。所以解决方案是为 Linux 增加虚拟内存 swap。
 
 查看内存占用情况：
 

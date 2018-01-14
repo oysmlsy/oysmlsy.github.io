@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "利用 GoAgent、gogotester 翻墙"
-categories: technology
 ---
 ## 注册 Google 账户
 

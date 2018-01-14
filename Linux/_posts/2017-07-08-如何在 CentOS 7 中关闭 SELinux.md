@@ -1,4 +1,7 @@
-# CentOS 上关闭 SELinux
+---
+layout: right-sidebar
+title:  '如何在 CentOS 7 中关闭 SELinux'
+---
 
 ## 修改配置文件，永久生效，需要重启
 

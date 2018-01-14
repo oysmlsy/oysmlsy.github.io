@@ -20,7 +20,19 @@ super+shift+p
 	{ "keys": ["super+l"], "command": "expand_selection", "args": {"to": "line"} },
 
 
+sublime
+Emmet(PyV8)
+HTML-CSS-JS Prettify
+jQuery
+All Autocomplete
+Bootstrap 3 Snippets
+Bootstrap 3 Autocomplete
+Side Bar Enhancements
+BracketHighlighter
+Color Highlighter
 
+python:Anaconda
+"auto_formatting": true
 
 
 

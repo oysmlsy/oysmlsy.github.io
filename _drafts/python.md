@@ -19,6 +19,12 @@ python manage.py runserver
 
 
 
+
+pip install virtualenv
+virtualenv venv
+source venv/bin/activate
+
+
 ALLOWED_HOSTS = ['*']
 LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'zh-Hans'
