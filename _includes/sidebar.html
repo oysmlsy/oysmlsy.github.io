@@ -1,25 +1,25 @@
 <section id="sidebar">
-	{% if page.categories %}
-	<section>
-		<h3>同类别文章</h3>
-		<ul class="alt">
-			{% for post in site.categories[page.categories.last] limit:10 }}] %}
-			<li><a href="{{ post.url | relative_url }}" style="color: inherit; border: none;">{{ post.title }}</a></li>
-			{% endfor %}
-		</ul>
-	</section>
-	<hr>
-	{% endif %}
-	<section>
-		{% for post in site.posts limit:5 }}] %}
-		<h3>{{ post.title }}</h3>
-		<p>{{ post.excerpt | strip_html | strip_newlines | truncate: site.truncate_length, " …" }}</p>
-		<footer>
-			<ul class="actions">
-				<li><a href="{{ post.url | relative_url }}" class="button small">继续阅读</a></li>
-			</ul>
-		</footer>
-		<hr>
-		{% endfor %}
-	</section>
+    {% if page.categories %}
+    <section>
+        <h3>同类别文章</h3>
+        <ul class="alt">
+            {% for post in site.categories[page.categories.last] limit:10 }}] %}
+            <li><a href="{{ post.url | relative_url }}" style="color: inherit; border: none;">{{ post.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+    <hr>
+    {% endif %}
+    <section>
+        {% for post in site.posts limit:5 }}] %}
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt | strip_html | strip_newlines | truncate: site.truncate_length, " …" }}</p>
+        <footer>
+            <ul class="actions">
+                <li><a href="{{ post.url | relative_url }}" class="button small">继续阅读</a></li>
+            </ul>
+        </footer>
+        <hr>
+        {% endfor %}
+    </section>
 </section>

@@ -3,15 +3,15 @@ layout: base
 ---
 <!-- Main -->
 <div id="main" class="wrapper style1">
-	<div class="container">
-		{% include breadcrumb.html %}
-		<header class="major">
-			<h2>{% if page.title %}{{ page.title }}{% else %}{{ page.path | split:'/' | slice:-2 }}{% endif %}</h2>
-		</header>
-		<!-- Content -->
-		<section id="content">
-			{{ content }}
-		</section>
-		{% include pager.html %}
-	</div>
+    <div class="container">
+        {% include breadcrumb.html %}
+        <header class="major">
+            <h2>{% if page.title %}{{ page.title }}{% else %}{{ page.path | split:'/' | slice:-2 }}{% endif %}</h2>
+        </header>
+        <!-- Content -->
+        <section id="content">
+            {{ content }}
+        </section>
+        {% include pager.html %}
+    </div>
 </div>

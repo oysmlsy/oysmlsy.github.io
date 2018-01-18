@@ -3,10 +3,10 @@ layout: no-sidebar
 ---
 
 {% for post in site.categories['Linux'] %}
-	<header>
-		<h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-		<p style="font-size: 0.8em; color: rgba(255,255,255,0.4);"><i class="fa fa-user" aria-hidden="true"></i> <a href="mailto:{{ site.email }}" style="color: inherit; border: none;">{{ site.author }}</a> | <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: "%Y-%m-%d  %H:%M" }}</p>
-	</header>
-	<p>{{ post.excerpt | strip_html | strip_newlines | truncate: site.truncate_length, " …" }} <a href="{{ post.url | relative_url }}" style="word-break: keep-all;">继续阅读 <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
-	<hr>
+    <header>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p style="font-size: 0.8em; color: rgba(255,255,255,0.4);"><i class="fa fa-user" aria-hidden="true"></i> <a href="mailto:{{ site.email }}" style="color: inherit; border: none;">{{ site.author }}</a> | <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: "%Y-%m-%d  %H:%M" }}</p>
+    </header>
+    <p>{{ post.excerpt | strip_html | strip_newlines | truncate: site.truncate_length, " …" }} <a href="{{ post.url | relative_url }}" style="word-break: keep-all;">继续阅读 <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
+    <hr>
 {% endfor %}

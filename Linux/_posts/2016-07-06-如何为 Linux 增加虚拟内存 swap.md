@@ -1,6 +1,6 @@
 ---
 layout: right-sidebar
-title:  '如何为 Linux 增加虚拟内存 swap'
+title: 如何为 Linux 增加虚拟内存 swap
 ---
 
 最近公司一台阿里云乞丐版云服务器上的 Wordpress 网站经常挂掉，翻看日志查明原因：内存小，MySQL 不停的消耗内存，最后被操作系统 kill 了。所以解决方案是为 Linux 增加虚拟内存 swap。

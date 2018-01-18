@@ -2,7 +2,7 @@
 layout: no-sidebar
 ---
 
-{% for post in site.categories['Jekyll'] %}
+{% for post in site.categories['TextEditor'] %}
     <header>
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <p style="font-size: 0.8em; color: rgba(255,255,255,0.4);"><i class="fa fa-user" aria-hidden="true"></i> <a href="mailto:{{ site.email }}" style="color: inherit; border: none;">{{ site.author }}</a> | <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date: "%Y-%m-%d  %H:%M" }}</p>

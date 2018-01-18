@@ -13,8 +13,12 @@ openemr
 tine20
 
 
+ScreenToGif
+一个了解计算机技术并对未知知识充满期待和敬畏的人
+满是好奇心的未来工程师一枚
 
 
+iTerm2
 
 git fetch -p
 
@@ -36,7 +40,7 @@ import static
 
 @NoRepositoryBean
 
-redcarpet markdown processer or parser 
+redcarpet markdown processer or parser
 
 
 
@@ -168,7 +172,7 @@ Server Side Tech Stack
 	virtualenv, PyPI, Django
 
 	Database
-	MySql, SQL Server, PostgreSQL, H2 Database, SQLite 
+	MySql, SQL Server, PostgreSQL, H2 Database, SQLite
 
 	Microsoft
 	VC++: Windows API Programming, MFC

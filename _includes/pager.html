@@ -1,20 +1,20 @@
 {% if page.categories %}
 <section>
-	<hr>
-	{% assign siblings_posts = site.categories[page.categories.last] %}
-	{% for post in siblings_posts %}
-	{% if post.id == page.id %}
-	{% unless forloop.first %}
-	{% assign previous_index = forloop.index0 | minus:1 %}
-	<a href="{{ siblings_posts[previous_index].url | relative_url }}" class="button" style="float: left;"><i class="fa fa-chevron-left" aria-hidden="true"></i> 上一页</a>
-	{% endunless %}
-	{% unless forloop.last %}
-	{% assign next_index = forloop.index0 | plus:1 %}
-	<a href="{{ siblings_posts[next_index].url | relative_url }}" class="button" style="float: right;">下一页 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-	{% endunless %}
-	{% break %}
-	{% endif %}
-	{% endfor %}
-	<hr style="float: left;">
+    <hr>
+    {% assign siblings_posts = site.categories[page.categories.last] %}
+    {% for post in siblings_posts %}
+    {% if post.id == page.id %}
+    {% unless forloop.first %}
+    {% assign previous_index = forloop.index0 | minus:1 %}
+    <a href="{{ siblings_posts[previous_index].url | relative_url }}" class="button" style="float: left;"><i class="fa fa-chevron-left" aria-hidden="true"></i> 上一页</a>
+    {% endunless %}
+    {% unless forloop.last %}
+    {% assign next_index = forloop.index0 | plus:1 %}
+    <a href="{{ siblings_posts[next_index].url | relative_url }}" class="button" style="float: right;">下一页 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+    {% endunless %}
+    {% break %}
+    {% endif %}
+    {% endfor %}
+    <hr style="float: left;">
 </section>
 {% endif %}

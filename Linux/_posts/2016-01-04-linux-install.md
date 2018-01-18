@@ -1,6 +1,6 @@
 ---
 layout: right-sidebar
-title:  "安装 CentOS 7.x Minimal 后，从头打造桌面工作站"
+title: 安装 CentOS 7.x Minimal 后，从头打造桌面工作站
 ---
 
 ## 安装 CentOS 7.x 后，以前装好的 Windows 或是其它操作系统没有出现在启动项中的解决办法

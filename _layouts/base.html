@@ -1,64 +1,64 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
-		<meta name="description" content="{{ site.description | strip_newlines }}{% if page.excerpt %} - {{ page.excerpt | strip_html | strip_newlines | truncate: site.truncate_length }}{% endif %}">
-		<!--[if lte IE 8]><script src="{{ '/assets/js/ie/html5shiv.js' | relative_url }}"></script><![endif]-->
-		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="{{ '/assets/css/ie9.css' | relative_url }}" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="{{ '/assets/css/ie8.css' | relative_url }}" /><![endif]-->
-		<style type="text/css">
-			#content h2 {
-				font-size: 1.5em;
-			}
-		</style>
-	</head>
-	<body{% if page.landing %} class="landing"{% endif %}>
-		<div id="page-wrapper">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+        <meta name="description" content="{{ site.description | strip_newlines }}{% if page.excerpt %} - {{ page.excerpt | strip_html | strip_newlines | truncate: site.truncate_length }}{% endif %}">
+        <!--[if lte IE 8]><script src="{{ '/assets/js/ie/html5shiv.js' | relative_url }}"></script><![endif]-->
+        <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+        <!--[if lte IE 9]><link rel="stylesheet" href="{{ '/assets/css/ie9.css' | relative_url }}" /><![endif]-->
+        <!--[if lte IE 8]><link rel="stylesheet" href="{{ '/assets/css/ie8.css' | relative_url }}" /><![endif]-->
+        <style type="text/css">
+            #content h2 {
+                font-size: 1.5em;
+            }
+        </style>
+    </head>
+    <body{% if page.landing %} class="landing"{% endif %}>
+        <div id="page-wrapper">
 
-			<!-- Header -->
-				<header id="header">
-					<h1 id="logo"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="{{ '/' | relative_url }}">首页</a></li>
-							{% for category in site.categories %}
-							<li><a href="{{ '/' | append: category[0] | relative_url }}">{{ category[0] }}</a></li>
-							{% endfor %}
-						</ul>
-					</nav>
-				</header>
+            <!-- Header -->
+                <header id="header">
+                    <h1 id="logo"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+                    <nav id="nav">
+                        <ul>
+                            <li><a href="{{ '/' | relative_url }}">首页</a></li>
+                            {% for category in site.categories %}
+                            <li><a href="{{ '/' | append: category[0] | relative_url }}">{{ category[0] }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                </header>
 
-			{{ content }}
+            {{ content }}
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="{{ site.linkedin_url }}" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/{{ site.github_username }}" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-						<li><a href="mailto:{{ site.email }}" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
-						<li><a href="{{ '/feed.xml' | relative_url }}" class="icon alt fa-rss" target="_blank"><span class="label">RSS</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li><a href="{{ '/' | relative_url }}">{{ site.title }}</a></li>
-						<li>Copyright &copy; 2018. All rights reserved.</li>
-						<li>Powered by <a href="https://jekyllrb.com" target="_blank">Jeklly</a></li>
-					</ul>
-				</footer>
+            <!-- Footer -->
+                <footer id="footer">
+                    <ul class="icons">
+                        <li><a href="{{ site.linkedin_url }}" class="icon alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/{{ site.github_username }}" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+                        <li><a href="mailto:{{ site.email }}" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+                        <li><a href="{{ '/feed.xml' | relative_url }}" class="icon alt fa-rss" target="_blank"><span class="label">RSS</span></a></li>
+                    </ul>
+                    <ul class="copyright">
+                        <li><a href="{{ '/' | relative_url }}">{{ site.title }}</a></li>
+                        <li>Copyright &copy; 2018. All rights reserved.</li>
+                        <li>Powered by <a href="https://jekyllrb.com" target="_blank">Jeklly</a></li>
+                    </ul>
+                </footer>
 
-		</div>
+        </div>
 
-		<!-- Scripts -->
-			<script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
-			<script src="{{ '/assets/js/jquery.scrolly.min.js' | relative_url }}"></script>
-			<script src="{{ '/assets/js/jquery.dropotron.min.js' | relative_url }}"></script>
-			<script src="{{ '/assets/js/jquery.scrollex.min.js' | relative_url }}"></script>
-			<script src="{{ '/assets/js/skel.min.js' | relative_url }}"></script>
-			<script src="{{ '/assets/js/util.js' | relative_url }}"></script>
-			<!--[if lte IE 8]><script src="{{ '/assets/js/ie/respond.min.js' | relative_url }}"></script><![endif]-->
-			<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+        <!-- Scripts -->
+            <script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+            <script src="{{ '/assets/js/jquery.scrolly.min.js' | relative_url }}"></script>
+            <script src="{{ '/assets/js/jquery.dropotron.min.js' | relative_url }}"></script>
+            <script src="{{ '/assets/js/jquery.scrollex.min.js' | relative_url }}"></script>
+            <script src="{{ '/assets/js/skel.min.js' | relative_url }}"></script>
+            <script src="{{ '/assets/js/util.js' | relative_url }}"></script>
+            <!--[if lte IE 8]><script src="{{ '/assets/js/ie/respond.min.js' | relative_url }}"></script><![endif]-->
+            <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 
-	</body>
+    </body>
 </html>
