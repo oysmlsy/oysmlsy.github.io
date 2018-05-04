@@ -150,10 +150,6 @@ CentOS 的官方 YUM 仓库没有支持 NTFS 的包，需要从 EPEL 或 RPMForg
 
 将 Gradle 和 Maven 的 bin 目录加入到 $PATH 环境变量。
 
-
-
-
-
 ## 安装 Git
 
     $ yum install git

@@ -1,3 +1,5 @@
+web.py
+
 阿里云gradle镜像
 maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
 
@@ -135,7 +137,9 @@ javascript
 jquery
 
 websocketd
-caddy
+Caddy
+Less
+Bower
 
 
 Front-end Web Tech Stack
