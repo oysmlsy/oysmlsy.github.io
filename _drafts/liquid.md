@@ -1,19 +1,61 @@
 ---
-layout: right-sidebar
 title: Jekyll Liquid 的用法
 ---
 
-Liquid 有两种 Markup（标记）：输出（Output）和标签（Tag）。
+Liquid：
 
-* 输出标记（Output markup）被解析为文本，用`{% raw %}{{ }}{% endraw %}`包围：
+* 开源的模板语言
+* 由 [Shopify](https://www.shopify.com) 创造
+* 用 Ruby 语言编写
+
+Liquid 有如下操作符（operator）：
+
+* `==` 等于
+* `!=` 不等于
+* `>`  大于
+* `<`  小于
+* `>=` 大于等于
+* `<=` 小于等于
+* `or` 逻辑或
+* `and` 逻辑与
+* `contains` 包含
+
+重点说下`contains`这个操作符。
+
+
+* 用于检查在一个字符串中是否存在某个子字符串，见示例：
+
+        {% raw %}
+        {% if product.title contains 'Pack' %}
+        This product's title contains the word Pack.
+        {% endif %}
+        {% endraw %}
+
+* 用于检查在一个字符串数组中是否存在某个字符串，见示例：
+
+        {% raw %}
+        {% if product.tags contains 'Hello' %}
+        This product has been tagged with 'Hello'.
+        {% endif %}
+        {% endraw %}
+
+* 只能处理字符串。换言之，非字符串的数组不能使用`contains`；再换言之，`contains`的使用场景仅限于上述两种情况。
+
+Liquid 中有两种标记 `{% raw %}{{ }}{% endraw %}` 和 `{% raw %}{% %}{% endraw %}`
+
+Liquid 中有两种标记：Output 和 Tag。
+
+* Output 标记被解析为文本，用`{% raw %}{{ }}{% endraw %}`包围：
 
         {% raw %}{{ matched pairs of curly brackets (ie, braces) }}{% endraw %}
 
-* 标签标记（Tag markup）不解析为文本，用`{% raw %}{% %}{% endraw %}`包围：
+* Tag 标记负责逻辑和流程控制，用`{% raw %}{% %}{% endraw %}`包围：
 
         {% raw %}{% matched pairs of curly brackets and percent signs %}{% endraw %}
 
 ## 输出标记（Output markup）
+
+用 `{% raw %}{{ }}{% endraw %}`将表达式包围起来，构成 Output 语句
 
 输出语句（Output statement）就是用双花括号包围一个表达式（Expression），模板被引擎处理渲染后，输出语句（Output statement）即被表达式（Expression）的值所取代。
 
@@ -52,10 +94,3 @@ Liquid 输出标记（Output markup）中，如下几种类型的表达式（Exp
 * **整数（Integer）**。整数不要用引号括起来，不然就成字符串了。
 
 * **布尔值、空值（Boolean and nil）**
-
-
-
-
-
-
-Booleans and nil. The literal values true, false, and nil.

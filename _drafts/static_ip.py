@@ -14,7 +14,7 @@ import shutil
 import sys
 
 
-def _static_ip(interface, ipaddr, netmask, gateway, dns1, dns2='8.8.8.8', bootproto='static', onboot='yes', nm_controlled='no'):
+def _static_ip(interface, ipaddr, netmask, gateway, dns1='180.76.76.76', dns2='8.8.8.8', bootproto='static', onboot='yes', nm_controlled='no'):
     re_str = r'^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
     if not re.match(re_str, ipaddr) or not re.match(re_str, netmask) or not re.match(re_str, gateway) or not re.match(re_str, dns1) or not re.match(re_str, dns2):
         raise TypeError('IP format error!')

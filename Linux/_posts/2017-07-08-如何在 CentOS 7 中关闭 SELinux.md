@@ -1,5 +1,4 @@
 ---
-layout: right-sidebar
 title: 如何在 CentOS 7 中关闭 SELinux
 ---
 

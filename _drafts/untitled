@@ -1,0 +1,47 @@
+yum install -y net-tools git &&
+yum remove docker docker-client docker-client-latest docker-common docker-latest docker-latest-logrotate docker-logrotate docker-selinux docker-engine-selinux docker-engine &&
+yum install -y yum-utils device-mapper-persistent-data lvm2 &&
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo &&
+yum install -y docker-ce &&
+curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f33b007d.m.daocloud.io &&
+systemctl enable docker &&
+systemctl start docker
+
+
+python -m SimpleHTTPServer (Python 2)
+python -m http.server (Python 3)
+
+
+
+#apt-get install gcc
+#apt-get install libmysqlclient-dev
+#MySQL-python==1.2.5
+#libapache2-mod-wsgi
+#apt-get install python2.7
+#apt install python-pip
+#FROM httpd:2.4
+#RUN apt-get update
+#RUN apt-get install -y vim
+#RUN apt-get install -y python-pip
+#RUN apt-get install -y --no-install-recommends gcc python-pip libmysqlclient-dev
+#RUN rm -rf /var/lib/apt/lists/*
+#RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup && \
+#curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo && \
+#yum makecache
+#pip install --no-cache-dir -i https://mirrors.aliyun.com/pypi/simple -r requirements.txt
+
+
+
+watchman
+
+
+$ brew cask list
+                                               iina                      quicklook-json            thunder
+ccleaner                  docker                    google-chrome             pycharm                   sublime-text              vmware-fusion
+
+
+
+brew list
+gdbm        openssl     pkg-config  readline    sqlite      xz
+libyaml     pcre        python      ruby        watchman
+

@@ -1,5 +1,4 @@
 ---
-layout: right-sidebar
 title: 如何为 Linux 增加虚拟内存 swap
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: right-sidebar
 title: 安装配置管理 Apache HTTP Server（httpd）
 ---
 

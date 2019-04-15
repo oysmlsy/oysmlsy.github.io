@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: OYSMLSY Technology
+title: OYSMLSY
 email: oysmlsy@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   个人学习笔记
@@ -28,3 +28,10 @@ permalink: /:categories/:title
 
 github_username:  oysmlsy
 linkedin_url: https://www.linkedin.com/in/yunfei-huang-67722469
+
+defaults:
+  -
+    scope:
+      path: ''
+    values:
+      layout: 'right-sidebar'

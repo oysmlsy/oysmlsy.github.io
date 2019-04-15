@@ -190,5 +190,7 @@ Server Side Tech Stack
 
 
 
+rsync -avzP ./${zip} ${user}@${ip}:${path}
+
 
 
